@@ -8,8 +8,6 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id') // Create this in Jenkins Credentials
         IMAGE_NAME = 'khushi0311/simple-springboot-app'
-        DOCKER_USERNAME = 'khushi0311'
-        DOCKER_PASSWORD = 'Momopanda@03'
     }
 
     stages {
