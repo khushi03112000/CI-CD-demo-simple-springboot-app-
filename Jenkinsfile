@@ -8,6 +8,8 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id') // Create this in Jenkins Credentials
         IMAGE_NAME = 'khushi0311/simple-springboot-app'
+        DOCKER_USERNAME = 'khushi0311'
+        DOCKER_PASSWORD = 'Momopanda@03'
     }
 
     stages {
@@ -31,7 +33,7 @@ pipeline {
 
         stage('Login to DockerHub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials-id', usernameVariable: 'khushi0311', passwordVariable: 'Momopanda@03')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials-id', usernameVariable: '$DOCKER_USERNAME', passwordVariable: '$DOCKER_PASSWORD')]) {
                     sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
                 }
             }
