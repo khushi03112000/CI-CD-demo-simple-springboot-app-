@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/khushi031120000/CI-CD-demo-simple-springboot-app-.git'
+                git branch: 'main', url: 'https://github.com/khushi03112000/CI-CD-demo-simple-springboot-app-.git'
             }
         }
 
