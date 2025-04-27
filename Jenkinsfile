@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+    docker {
+      image 'maven:3.8.1-jdk-8'  // Use Maven Docker image with JDK 8
+    }
+  }
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id') // Create this in Jenkins Credentials
